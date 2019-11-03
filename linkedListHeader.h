@@ -13,4 +13,7 @@ void print_list(struct song_node *x);
 
 void findSong(struct song_node *front, char *myArtist, char *mySong);
 
+void randomElement(struct song_node *front);
+int lengthList(struct song_node *front);
+
 struct song_node *free_list(struct song_node *front);
