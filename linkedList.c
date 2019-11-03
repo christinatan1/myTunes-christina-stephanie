@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #include "linkedListHeader.h"
 
@@ -52,9 +53,24 @@ void findSong(struct song_node *front, char *myArtist, char *mySong){
 }
 
 
+int lengthList(struct song_node *front){
+  int output = 1;
+  while (front -> next != NULL){
+    output++;
+    front = front->next;
+  }
+  return output;
+}
 
-void song_node *randomElement(){
-
+void randomElement(struct song_node *front){
+  int length = lengthList(front);
+  int random = (rand() % (length + 1));
+  int i;
+  struct song_node *p = front;
+  for (int i = 0; i < random; i++){
+    p = p->next;
+  }
+  printf("%s: %s\n", p->artist, p->name);
 }
 
 
