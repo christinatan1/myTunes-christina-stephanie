@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "linkedListHeader.h"
+
 
 int main(){
 
@@ -16,15 +18,20 @@ int main(){
   //testing insert_front
   printf("\nInserting nodes:\n");
   linkedList = insert_front(linkedList, "feelings", "lauv");
-  linkedList = insert_front(linkedList, "boy in luv", "bts");
+  linkedList = insert_front(linkedList, "boy with luv", "bts");
+  linkedList = insert_front(linkedList, "lose you to love me", "selena gomez");
+  linkedList = insert_front(linkedList, "feel special", "twice");
+  linkedList = insert_front(linkedList, "liar", "camila cabello");
   print_list(linkedList);
 
   //testing find_song
   printf("\nFinding node:\n");
-  findSong(linkedList, "bts", "boy in luv");
-  findSong(linkedList, "bts", "dna");
+  findSong(linkedList, "bts", "boy with luv");
+  findSong(linkedList, "dna", "dna");
 
   //testing random song
+  printf("\nTesting random:\n");
+  srand(time(0));
   randomElement(linkedList);
   randomElement(linkedList);
   randomElement(linkedList);
