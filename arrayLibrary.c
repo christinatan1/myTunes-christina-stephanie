@@ -13,11 +13,13 @@ void add_song(struct song_node **library, char *myArtist, char *myName) {
   library[num] = insert_order(library[num], myArtist, myName);
 }
 
+
 struct song_node *search_song(struct song_node **library, char *myArtist, char *myName) {
   int num = myArtist[0] - 'a';
   return find_song(library[num], myArtist, myName);
 }
   
+
 struct song_node *search_artist(struct song_node **library, char *myArtist) {
   printf("searching for %s", myArtist);
 
@@ -26,6 +28,7 @@ struct song_node *search_artist(struct song_node **library, char *myArtist) {
   return find_first(library[num], myArtist);
 }
 
+
 void print_letter(struct song_node **library, char letter) {
   printf("entries under %c\n", letter);
 
@@ -33,4 +36,31 @@ void print_letter(struct song_node **library, char letter) {
 
   print_list(library[num]);
   
+}
+
+
+void print_library(struct song_node **library){
+  int i;
+  for (int i = 0; i <=27; i++){
+    if (library[i] != NULL){
+      printf("%s list", i + 'a';
+      print_list(library[i]);
+    }
+  }
+}
+
+             
+void delete_song(struct song_node **library, char *myArtist, char *myName){
+  printf("deleting [%s: %s]\n", myArtist, myName);
+  int num = myArtist[0] - 'a';
+  library[num] = remove_node(library[num], myArtist, myName);
+}
+
+
+struct song_node clear_library(struct song_node **library){
+  int i;
+  for (int i = 0; i <= 27; i++){
+    free_list(library[i]);
+  }
+  return library;
 }
