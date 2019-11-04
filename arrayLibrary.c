@@ -5,13 +5,12 @@
 #include "linkedListHeader.h"
 #include "arrayLibraryHeader.h"
 
-struct song_node *add_song(struct song_node **library, char *myArtist, char *myName) {
+void add_song(struct song_node **library, char *myArtist, char *myName) {
   printf("adding [%s: %s]\n", myArtist, myName);
   
   int num = myArtist[0] - 'a';
 
-  struct song_node * song = insert_order(library[num], myArtist, myName);
-  return song;
+  library[num] = insert_order(library[num], myArtist, myName);
 }
 
 struct song_node *search_song(struct song_node **library, char *myArtist, char *myName) {
