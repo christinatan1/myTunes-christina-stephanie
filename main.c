@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "linkedListHeader.h"
+#include "arrayLibraryHeader.h"
 
 
 int main(){
@@ -38,6 +39,7 @@ int main(){
   struct song_node *song1 = find_song(linkedList, "lauv", "feelings");
   struct song_node *song2 = find_song(linkedList, "bts", "boy with luv");
   struct song_node *song3 = find_song(linkedList, "bryson tiller", "don't");
+  struct song_node *song4 = find_song(linkedList, "bryson tiller", "exchange");
   find_song(linkedList, "bts", "dna");
 
   //testing songcmp
@@ -82,7 +84,7 @@ int main(){
   printf("\n\n\n******************* SONG LIBRARY TESTS *******************\n");
 
   struct song_node *table[27] = {};
-      
+
   //testing add_song
   printf("\nAdding song:\n");
   add_song(table, "blackbear", "do re mi");
@@ -107,22 +109,6 @@ int main(){
   search_artist(table, "blackbear");
   search_artist(table, "sia");
   search_artist(table, "beethoven");
-  
-  //testing print_library
-  printf("\nPrinting full library:\n");
-  print_library(table);
-
-  //testing delete_song
-  printf("\nTesting remove song:\n");
-  delete_song(table, "sia", "chandelier");
-  print_library(table);
-  delete_song(table, "kiiara", "gold");
-  print_library(table);
-
-  //testing clear_library
-  printf("\nClearing library:\n");
-  table = clear_library(table);
-  print_library(table);
 
   //testing print_library
   printf("\nPrinting full library:\n");
@@ -131,12 +117,11 @@ int main(){
   //testing delete_song
   printf("\nTesting remove song:\n");
   delete_song(table, "sia", "chandelier");
-  print_library(table);
   delete_song(table, "kiiara", "gold");
   print_library(table);
 
   //testing clear_library
   printf("\nClearing library:\n");
-  table = clear_library(table);
-  print_library(table);
+  //table = clear_library(table);
+  //print_library(table);
 }
