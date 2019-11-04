@@ -24,10 +24,40 @@ int main(){
   linkedList = insert_front(linkedList, "liar", "camila cabello");
   print_list(linkedList);
 
+  //testing insert_order
+  printf("\nInserting nodes in order:\n");
+  linkedList = insert_order(linkedList, "exchange", "bryson tiller");
+  linkedList = insert_order(linkedList, "don't", "bryson tiller");
+  linkedList = insert_order(linkedList, "on the road", "post malone");
+  linkedList = insert_order(linkedList, "enemies", "post malone");
+  linkedList = insert_order(linkedList, "allergic", "post malone");
+  print_list(linkedList);
+
   //testing find_song
   printf("\nFinding node:\n");
-  findSong(linkedList, "bts", "boy with luv");
-  findSong(linkedList, "dna", "dna");
+  struct song_node *song1 = findSong(linkedList, "lauv", "feelings");
+  struct song_node *song2 = findSong(linkedList, "bts", "boy in luv");
+  struct song_node *song3 = findSong(linkedList, "bryson tiller", "exchange");
+  struct song_node *song4 = findSong(linkedList, "bryson tiller", "don't");
+
+  findSong(linkedList, "bts", "dna");
+
+  //testing songcmp
+  printf("\nComparing songs:\n");
+  print_node(song1);
+  print_node(song1);
+  printf("%d\n", songcmp(song1, song1));
+  print_node(song1);
+  print_node(song2);
+  printf("%d\n", songcmp(song1, song2));
+  print_node(song3);
+  print_node(song4);
+  printf("%d\n", songcmp(song3, song4));
+
+  //testing find_first
+  printf("\nFinding first songs by artist:\n");
+  findFirst(linkedList, "bryson tiller");
+  findFirst(linkedList, "post malone");
 
   //testing random song
   printf("\nTesting random:\n");
@@ -35,6 +65,14 @@ int main(){
   randomElement(linkedList);
   randomElement(linkedList);
   randomElement(linkedList);
+
+  //testing remove_node
+  printf("\nRemoving songs:\n");
+  printf("remove post malone: allergic\n");
+  remove_node(linkedList, "post malone", "allergic");
+  printf("remove lauv: feelings\n");
+  remove_node(linkedList, "lauv", "feelings");
+  print_list(linkedList);
 
   //testing free_list
   linkedList = free_list(linkedList);
