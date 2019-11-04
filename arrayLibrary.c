@@ -34,3 +34,18 @@ void print_letter(struct song_node **library, char letter) {
   print_list(library[num]);
   
 }
+
+void delete_song(struct song_node **library, char *myArtist, char *myName){
+  printf("deleting [%s: %s]\n", myArtist, myName);
+  int num = myArtist[0] - 'a';
+  library[num] = remove_node(library[num], myArtist, myName);
+}
+
+
+struct song_node clear_library(struct song_node **library){
+  int i;
+  for (int i = 0; i <= 27; i++){
+    free_list(library[i]);
+  }
+  return library;
+}
