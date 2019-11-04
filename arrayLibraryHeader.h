@@ -3,7 +3,7 @@
 
 struct song_node *table[27];
 
-struct song_node *add_song(struct song_node **library, char *myArtist, char *myName);
+void add_song(struct song_node **library, char *myArtist, char *myName);
 
 struct song_node *search_song(struct song_node **library, char *myArtist, char *myName);
 
