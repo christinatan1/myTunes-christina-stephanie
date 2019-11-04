@@ -15,4 +15,4 @@ void print_library(struct song_node **library);
 
 void delete_song(struct song_node **library, char *myArtist, char *myName);
 
-struct song_node clear_library(struct song_node **library);
+struct song_node **clear_library(struct song_node **library);

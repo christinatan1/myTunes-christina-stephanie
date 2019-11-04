@@ -26,11 +26,11 @@ int main(){
 
   //testing insert_order
   printf("\nInserting nodes in order:\n");
-  linkedList = insert_order(linkedList, "exchange", "bryson tiller");
-  linkedList = insert_order(linkedList, "don't", "bryson tiller");
-  linkedList = insert_order(linkedList, "on the road", "post malone");
-  linkedList = insert_order(linkedList, "enemies", "post malone");
-  linkedList = insert_order(linkedList, "allergic", "post malone");
+  linkedList = insert_order(linkedList, "bryson tiller", "exchange");
+  linkedList = insert_order(linkedList, "bryson tiller", "don't");
+  linkedList = insert_order(linkedList, "post malone", "on the road");
+  linkedList = insert_order(linkedList, "post malone", "enemies");
+  linkedList = insert_order(linkedList, "post malone", "allergic");
   print_list(linkedList);
 
   //testing find_song
@@ -38,8 +38,6 @@ int main(){
   struct song_node *song1 = find_song(linkedList, "lauv", "feelings");
   struct song_node *song2 = find_song(linkedList, "bts", "boy with luv");
   struct song_node *song3 = find_song(linkedList, "bryson tiller", "don't");
-  struct song_node *song4 = find_song(linkedList, "bryson tiller", "exchange");
-
   find_song(linkedList, "bts", "dna");
 
   //testing songcmp
@@ -96,10 +94,17 @@ int main(){
   //testing print_letter
   printf("\nSearching under letters:\n");
   print_letter(table, 's');
+  print_letter(table, 'k');
+  print_letter(table, 'a');
 
   //testing search_song
   printf("\nSearching for songs:\n");
-  search_song(table, "sia", "big girls cry");
   search_song(table, "sia", "elastic heart");
+  search_song(table, "sia", "big girls cry");
 
+  //testing search_artist
+  printf("\nSearching by artist:\n");
+  search_artist(table, "blackbear");
+  search_artist(table, "sia");
+  search_artist(table, "beethoven");
 }

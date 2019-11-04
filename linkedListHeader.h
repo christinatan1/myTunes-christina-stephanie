@@ -11,7 +11,7 @@ struct song_node *insert_front(struct song_node *front, char *myName, char *myAr
 
 int songcmp (struct song_node *song1, struct song_node *song2);
 
-struct song_node *insert_order(struct song_node *front, char *myName, char *myArtist);
+struct song_node *insert_order(struct song_node *front, char *myArtist, char *myName);
 
 void print_node(struct song_node *x);
 
