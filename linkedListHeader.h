@@ -17,13 +17,13 @@ void print_node(struct song_node *x);
 
 void print_list(struct song_node *x);
 
-struct song_node *findSong(struct song_node *front, char *myArtist, char *mySong);
+struct song_node *find_song(struct song_node *front, char *myArtist, char *mySong);
 
-struct song_node *findFirst(struct song_node *front, char *myArtist);
+struct song_node *find_first(struct song_node *front, char *myArtist);
 
-int lengthList(struct song_node *front);
+int length_list(struct song_node *front);
 
-void randomElement(struct song_node *front);
+void random_element(struct song_node *front);
 
 struct song_node *remove_node(struct song_node *front, char *myArtist, char *myName);
 

@@ -79,7 +79,7 @@ void print_list(struct song_node *x){
   }
 }
 
-struct song_node *findSong(struct song_node *front, char *myArtist, char *mySong){
+struct song_node *find_song(struct song_node *front, char *myArtist, char *mySong){
   printf("looking for [%s: %s]\n", myArtist, mySong);
   while (front -> next != NULL){
     if (strcmp(front->artist, myArtist) == 0 && strcmp(front->name, mySong) == 0){
@@ -96,7 +96,7 @@ struct song_node *findSong(struct song_node *front, char *myArtist, char *mySong
   return NULL;
 }
 
-struct song_node *findFirst(struct song_node *front, char *myArtist) {
+struct song_node *find_first(struct song_node *front, char *myArtist) {
   printf("by %s ", myArtist);
   while (front -> next != NULL){
     if (strcmp(front->artist, myArtist) == 0){
@@ -109,7 +109,7 @@ struct song_node *findFirst(struct song_node *front, char *myArtist) {
   return NULL;
 }
 
-int lengthList(struct song_node *front){
+int length_list(struct song_node *front){
   int output = 1;
   while (front -> next != NULL){
     output++;
@@ -118,8 +118,8 @@ int lengthList(struct song_node *front){
   return output;
 }
 
-void randomElement(struct song_node *front){
-  int length = lengthList(front);
+void random_element(struct song_node *front){
+  int length = length_list(front);
   int random = (rand() % (length + 1));
   int i;
   struct song_node *p = front;
