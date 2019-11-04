@@ -101,5 +101,21 @@ int main(){
   printf("\nSearching for songs:\n");
   search_song(table, "sia", "big girls cry");
   search_song(table, "sia", "elastic heart");
+  
+  //testing print_library
+  printf("\nPrinting full library:\n");
+  print_library(table);
+
+  //testing delete_song
+  printf("\nTesting remove song:\n");
+  delete_song(table, "sia", "chandelier");
+  print_library(table);
+  delete_song(table, "kiiara", "gold");
+  print_library(table);
+
+  //testing clear_library
+  printf("\nClearing library:\n");
+  table = clear_library(table);
+  print_library(table);
 
 }
