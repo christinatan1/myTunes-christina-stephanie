@@ -101,6 +101,12 @@ int main(){
   printf("\nSearching for songs:\n");
   search_song(table, "sia", "elastic heart");
   search_song(table, "sia", "big girls cry");
+
+  //testing search_artist
+  printf("\nSearching by artist:\n");
+  search_artist(table, "blackbear");
+  search_artist(table, "sia");
+  search_artist(table, "beethoven");
   
   //testing print_library
   printf("\nPrinting full library:\n");
@@ -117,12 +123,6 @@ int main(){
   printf("\nClearing library:\n");
   table = clear_library(table);
   print_library(table);
-
-  //testing search_artist
-  printf("\nSearching by artist:\n");
-  search_artist(table, "blackbear");
-  search_artist(table, "sia");
-  search_artist(table, "beethoven");
 
   //testing print_library
   printf("\nPrinting full library:\n");
