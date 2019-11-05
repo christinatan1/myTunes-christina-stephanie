@@ -14,6 +14,7 @@ int main(){
 
   //testing print_list
   printf("Testing print_list: \n");
+  printf("Printing list: \n");
   print_list(linkedList);
 
   //testing insert_front
@@ -23,6 +24,7 @@ int main(){
   linkedList = insert_front(linkedList, "feelings", "lauv");
   linkedList = insert_front(linkedList, "liar", "camila cabello");
   linkedList = insert_front(linkedList, "boy with luv", "bts");
+  printf("Printing list: \n");
   print_list(linkedList);
 
   //testing insert_order
@@ -32,6 +34,7 @@ int main(){
   linkedList = insert_order(linkedList, "post malone", "on the road");
   linkedList = insert_order(linkedList, "post malone", "enemies");
   linkedList = insert_order(linkedList, "post malone", "allergic");
+  printf("Printing list: \n");
   print_list(linkedList);
 
   //testing find_song
@@ -58,10 +61,12 @@ int main(){
   printf("\nFinding first songs by artist:\n");
   find_first(linkedList, "bryson tiller");
   find_first(linkedList, "post malone");
+  find_first(linkedList, "mozart");
+
 
   //testing random song
   printf("\nTesting random:\n");
-  srand(time(0));
+  srand(time(NULL));
   random_element(linkedList);
   random_element(linkedList);
   random_element(linkedList);
@@ -72,11 +77,13 @@ int main(){
   remove_node(linkedList, "post malone", "allergic");
   printf("remove lauv: feelings\n");
   remove_node(linkedList, "lauv", "feelings");
+  printf("Printing list: \n");
   print_list(linkedList);
 
   //testing free_list
-  linkedList = free_list(linkedList);
   printf("\nFreeing list...\n");
+  linkedList = free_list(linkedList);
+  printf("Printing list: \n");
   print_list(linkedList);
 
 
@@ -102,6 +109,7 @@ int main(){
   //testing search_song
   printf("\nSearching for songs:\n");
   search_song(table, "sia", "elastic heart");
+  search_song(table, "rihanna", "needed me");
   search_song(table, "sia", "big girls cry");
 
   //testing search_artist
@@ -114,14 +122,20 @@ int main(){
   printf("\nPrinting full library:\n");
   print_library(table);
 
+  //testing shuffle
+  printf("\nTesting Shuffle:\n");
+  shuffle(table, 5);
+
   //testing delete_song
   printf("\nTesting remove song:\n");
   delete_song(table, "sia", "chandelier");
   delete_song(table, "kiiara", "gold");
+  printf("Printing table: \n");
   print_library(table);
 
   //testing clear_library
   printf("\nClearing library:\n");
-  //table = clear_library(table);
-  //print_library(table);
+  clear_library(table);
+  printf("Printing table: \n\n");
+  print_library(table);
 }

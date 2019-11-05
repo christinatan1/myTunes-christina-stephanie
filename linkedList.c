@@ -5,14 +5,8 @@
 
 #include "linkedListHeader.h"
 
-// struct song_node{
-//   char name[100];
-//   char artist[100];
-//   struct song_node *next;
-// };
-
-
 struct song_node *insert_front(struct song_node *front, char *myName, char *myArtist){
+  printf("Inserting %s: %s\n", myArtist, myName);
   struct song_node *newNode = malloc(sizeof(struct song_node));
   strcpy(newNode->name, myName);
   strcpy(newNode->artist, myArtist);
@@ -58,7 +52,7 @@ struct song_node *insert_order(struct song_node *front, char *myArtist, char *my
       return front;
     }
   }
-  
+
   return newNode;
 }
 
@@ -69,10 +63,10 @@ void print_node(struct song_node *x){
 
 void print_list(struct song_node *x){
   if (x == 0){
-    printf("Printing empty list: [ ]\n");
+    printf("Empty list: [ ]\n");
   }
   else {
-    printf("Printing list: \n");
+    // printf("Printing list: \n");
     while (x != 0){
       printf("%s: %s | ", x->artist, x->name);
       x = x->next;
@@ -109,7 +103,7 @@ struct song_node *find_first(struct song_node *front, char *myArtist) {
 
 int length_list(struct song_node *front){
   int output = 1;
-  while (front -> next != NULL){
+  while (front->next != NULL){
     output++;
     front = front->next;
   }
@@ -118,7 +112,8 @@ int length_list(struct song_node *front){
 
 void random_element(struct song_node *front){
   int length = length_list(front);
-  int random = (rand() % (length + 1));
+  int x = rand();
+  int random = (x % (length));
   int i;
   struct song_node *p = front;
   for (int i = 0; i < random; i++){
@@ -152,10 +147,12 @@ struct song_node *free_list(struct song_node *front){
   struct song_node *p;
   while (front -> next != NULL){
     p = front->next;
+    printf("freeing node: %s - %s\n", front->artist, front->name);
     free(front);
     front = NULL;
     front = p;
   }
+  printf("freeing node: %s - %s\n", front->artist, front->name);
   free(front);
   front = NULL;
   return front;
